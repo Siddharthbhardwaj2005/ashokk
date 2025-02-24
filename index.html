@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to PHI Founder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-merriweather { font-family: 'Merriweather', serif; }
+        .page { scroll-snap-align: start; }
+        .scroll-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+            scroll-behavior: smooth;
+        }
+        .gradient-overlay {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="text-2xl font-playfair font-bold text-slate-800">PHI</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+                    <a href="#legacy" class="hover:text-blue-600 transition-colors">Legacy</a>
+                    <a href="#impact" class="hover:text-blue-600 transition-colors">Impact</a>
+                    <a href="#tribute" class="hover:text-blue-600 transition-colors">Tribute</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#home" class="block hover:text-blue-600">Home</a>
+                <a href="#about" class="block hover:text-blue-600">About</a>
+                <a href="#legacy" class="block hover:text-blue-600">Legacy</a>
+                <a href="#impact" class="block hover:text-blue-600">Impact</a>
+                <a href="#tribute" class="block hover:text-blue-600">Tribute</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="scroll-container">
+        <!-- Home Page -->
+        <section id="home" class="page h-screen relative flex items-center justify-center">
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 gradient-overlay"></div>
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80" 
+                     alt="Library Background" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="relative text-center text-white">
+                <h1 class="font-playfair text-5xl md:text-7xl font-bold mb-4">The Visionary</h1>
+                <h2 class="font-merriweather text-2xl md:text-3xl">Founder of PHI Publications</h2>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page min-h-screen bg-white py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-playfair text-4xl font-bold text-center mb-16">About the Founder</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 font-merriweather">
+                        <p class="leading-relaxed text-slate-700">
+                            A pioneer in the publishing industry, our founder established PHI Publications with a vision to democratize knowledge and make quality educational content accessible to all.
+                        </p>
+                        <p class="leading-relaxed text-slate-700">
+                            Their journey began with a simple belief: that education is the most powerful tool for change. This belief transformed into a mission that has shaped countless lives through literature and learning.
+                        </p>
+                    </div>
+                    <div class="bg-slate-100 p-8 rounded-lg shadow-lg">
+                        <h3 class="font-playfair text-2xl font-bold mb-4">Core Values</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <i class="bi bi-check-circle-fill text-blue-600 mr-2"></i>
+                                <span>Excellence in Publishing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="bi bi-check-circle-fill text-blue-600 mr-2"></i>
+                                <span>Educational Innovation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="bi bi-check-circle-fill text-blue-600 mr-2"></i>
+                                <span>Knowledge Accessibility</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="bi bi-check-circle-fill text-blue-600 mr-2"></i>
+                                <span>Cultural Excellence</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legacy Page -->
+        <section id="legacy" class="page min-h-screen bg-slate-50 py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-playfair text-4xl font-bold text-center mb-16">A Legacy of Excellence</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="text-4xl text-blue-600 mb-4">
+                            <i class="bi bi-book"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold mb-3">Publications</h3>
+                        <p class="text-slate-600">Over 1000 titles published across various disciplines</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="text-4xl text-blue-600 mb-4">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold mb-3">Global Reach</h3>
+                        <p class="text-slate-600">Present in over 50 countries worldwide</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="text-4xl text-blue-600 mb-4">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold mb-3">Awards</h3>
+                        <p class="text-slate-600">Multiple industry recognitions for excellence</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Page -->
+        <section id="impact" class="page min-h-screen bg-white py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-playfair text-4xl font-bold text-center mb-16">Impact & Influence</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div class="relative pl-8 border-l-4 border-blue-600">
+                            <h3 class="font-playfair text-xl font-bold mb-2">Educational Revolution</h3>
+                            <p class="text-slate-600">Pioneered modern educational publishing standards</p>
+                        </div>
+                        <div class="relative pl-8 border-l-4 border-blue-600">
+                            <h3 class="font-playfair text-xl font-bold mb-2">Digital Transformation</h3>
+                            <p class="text-slate-600">Led the industry's transition to digital platforms</p>
+                        </div>
+                        <div class="relative pl-8 border-l-4 border-blue-600">
+                            <h3 class="font-playfair text-xl font-bold mb-2">Community Building</h3>
+                            <p class="text-slate-600">Created a global network of educators and learners</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-lg">
+                        <blockquote class="text-xl italic font-medium text-slate-700">
+                            "Education is not just about filling a bucket, but lighting a fire."
+                            <footer class="text-sm text-slate-500 mt-2">- PHI Founder's Vision</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tribute Page -->
+        <section id="tribute" class="page min-h-screen bg-slate-800 text-white py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-playfair text-4xl font-bold mb-8">Our Tribute</h2>
+                <p class="font-merriweather text-xl max-w-3xl mx-auto mb-12">
+                    To our visionary founder, whose dedication to education and knowledge continues to inspire generations. Your legacy lives on through every page we publish and every life we touch.
+                </p>
+                <div class="inline-flex flex-col items-center">
+                    <div class="text-6xl text-blue-400 mb-4">
+                        <i class="bi bi-heart-fill"></i>
+                    </div>
+                    <p class="text-lg text-blue-300">With gratitude and respect</p>
+                    <p class="mt-4 text-xl">The PHI Family</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
