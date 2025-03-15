@@ -21,6 +21,14 @@
         .gradient-overlay {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
         }
+        #typing-values li {
+        transition: opacity 0.5s ease;
+    }
+    
+    .typing-text {
+        display: inline-block;
+        min-height: 1.2em;
+    }
     </style>
 </head>
 <body class="bg-slate-50">
@@ -34,10 +42,35 @@
                      alt="Library Background" 
                      class="w-full h-full object-cover">
             </div>
-            <div class="relative text-center text-white">
-                <h1 class="font-playfair text-5xl md:text-7xl font-bold mb-4">Late Sh. Asoke Kumar Ghosh</h1>
-                <h1 class="font-playfair text-xl md:text-5xl font-bold mb-4">The Visionary</h1>
-                <h2 class="font-merriweather text-2xl md:text-3xl">Founder of PHI Publications</h2>
+            <div class="relative container mx-auto px-6">
+                <!-- Order is controlled by flex order classes -->
+                <div class="flex flex-col md:flex-row items-center">
+                    <!-- Image section - order-first on mobile, order-last on desktop -->
+                    <div class="w-full md:w-1/2 flex justify-center order-first md:order-last mb-8 md:mb-0">
+                        <div class="w-56 h-56 md:w-72 md:h-72 overflow-hidden border-4 border-white shadow-lg">
+                            <!-- Replace with actual founder image when available -->
+                            <img src="public/File 6.jpeg" 
+                                 alt="Founder" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Text section - order-last on mobile, order-first on desktop -->
+                    <div class="w-full md:w-1/2 text-white text-left md:pr-8 order-last md:order-first">
+                        <h1 class="font-playfair text-4xl md:text-6xl font-bold mb-2">Sh. Asoke K. Ghosh</h1>
+                        <h2 class="font-playfair text-xl md:text-3xl font-bold mb-6">The Visionary</h2>
+                      
+                        
+                        <div class="mt-6">
+                            <ul id="typing-values" class="font-merriweather text-lg">
+                                <li class="flex items-center mb-3 opacity-0"><i class="bi bi-check-circle-fill text-blue-400 mr-2"></i><span class="typing-text"></span></li>
+                                <li class="flex items-center mb-3 opacity-0"><i class="bi bi-check-circle-fill text-blue-400 mr-2"></i><span class="typing-text"></span></li>
+                                <li class="flex items-center mb-3 opacity-0"><i class="bi bi-check-circle-fill text-blue-400 mr-2"></i><span class="typing-text"></span></li>
+                                <li class="flex items-center mb-3 opacity-0"><i class="bi bi-check-circle-fill text-blue-400 mr-2"></i><span class="typing-text"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -48,10 +81,11 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6 font-merriweather">
                         <p class="leading-relaxed text-slate-700">
-                            A pioneer in the publishing industry, our founder established PHI Publications with a vision to democratize knowledge and make quality educational content accessible to all.
+                            In the illustrious realm of international publishing, the name of Asoke K. Ghosh continues to resonate with reverence and admiration. As the Chairman and Managing Director of PHI Learning Private Limited, Delhi, Ghosh not only carved a niche for himself but also left an indelible mark on the global publishing landscape. His journey, spanning over six decades, was a testament to his unwavering dedication, innovative spirit, and profound impact on the world of education and literature.
+
                         </p>
                         <p class="leading-relaxed text-slate-700">
-                            Their journey began with a simple belief: that education is the most powerful tool for change. This belief transformed into a mission that has shaped countless lives through literature and learning.
+                            Often hailed as the “Father of Indian Publishing” on the international stage, Ghosh's visionary endeavours in the 1960s revolutionized the accessibility of higher education publications, with the introduction of Eastern Economy Editions (EEE). These affordable yet high-quality books filled a critical void in the academic sphere, empowering Indian scholars with access to world-class resources at a fraction of the cost.
                         </p>
                     </div>
                     <div class="bg-slate-100 p-8 rounded-lg shadow-lg">
@@ -78,6 +112,173 @@
                 </div>
             </div>
         </section>
+        <!-- Replace your current carousel section with this code -->
+        <section class="page min-h-screen bg-white py-20">
+            <div class="container mx-auto px-5">
+                <h2 class="font-playfair text-4xl font-bold text-center mb-16">Gallery</h2>
+                
+                <!-- Carousel Container -->
+                <div class="carousel-container relative max-w-3xl mx-auto overflow-hidden rounded-lg shadow-lg">
+                    <div class="carousel flex transition-transform duration-500">
+                        <div class="carousel-slide min-w-full flex-shrink-0 relative">
+                            <img src="public/File 1.jpeg" alt="Abstract Landscape" class="w-full h-96 object-cover">
+                            <div class="slide-info absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4">
+                                <h3 class="slide-title text-xl font-bold mb-1">Abstract Landscape</h3>
+                                <p class="slide-desc text-sm">Oil on canvas, 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide min-w-full flex-shrink-0 relative">
+                            <img src="public/File 10.jpeg" alt="Reflections" class="w-full h-96 object-cover">
+                            <div class="slide-info absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4">
+                                <h3 class="slide-title text-xl font-bold mb-1">Reflections</h3>
+                                <p class="slide-desc text-sm">Watercolor, 2022</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide min-w-full flex-shrink-0 relative">
+                            <img src="public/File 11.jpeg" alt="Heritage Series #3" class="w-full h-96 object-cover">
+                            <div class="slide-info absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4">
+                                <h3 class="slide-title text-xl font-bold mb-1">Heritage Series #3</h3>
+                                <p class="slide-desc text-sm">Mixed media, 2021</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide min-w-full flex-shrink-0 relative">
+                            <img src="public/File 20.jpeg" alt="Urban Dreams" class="w-full h-96 object-cover">
+                            <div class="slide-info absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4">
+                                <h3 class="slide-title text-xl font-bold mb-1">Urban Dreams</h3>
+                                <p class="slide-desc text-sm">Acrylic on canvas, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation buttons -->
+                    <button class="carousel-button prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-70 text-gray-800 border-none cursor-pointer p-3 font-bold rounded-full w-10 h-10 flex items-center justify-center transition hover:bg-opacity-90 z-10" id="prevBtn">&#10094;</button>
+                    <button class="carousel-button next absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-70 text-gray-800 border-none cursor-pointer p-3 font-bold rounded-full w-10 h-10 flex items-center justify-center transition hover:bg-opacity-90 z-10" id="nextBtn">&#10095;</button>
+                    
+                    <!-- Indicators -->
+                    <div class="carousel-indicators flex justify-center absolute bottom-4 w-full" id="indicators">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                initializeCarousel();
+            });
+
+            function initializeCarousel() {
+                console.log('Initializing carousel');
+                
+                // Get carousel elements
+                const carousel = document.querySelector('.carousel');
+                const slides = document.querySelectorAll('.carousel-slide');
+                const prevButton = document.getElementById('prevBtn');
+                const nextButton = document.getElementById('nextBtn');
+                const indicatorsContainer = document.getElementById('indicators');
+                
+                // Exit if elements don't exist
+                if (!carousel || !slides.length || !prevButton || !nextButton || !indicatorsContainer) {
+                    console.error('Carousel elements not found');
+                    return;
+                }
+                
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+                
+                console.log(`Found ${totalSlides} slides`);
+                
+                // Clear any existing indicators
+                indicatorsContainer.innerHTML = '';
+                
+                // Create indicators
+                for (let i = 0; i < totalSlides; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.classList.add('indicator', 'w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'mx-1', 'cursor-pointer', 'transition');
+                    if (i === 0) {
+                        indicator.classList.add('bg-gray-700');
+                    }
+                    indicator.dataset.index = i;
+                    indicatorsContainer.appendChild(indicator);
+                    
+                    // Add click event to indicators
+                    indicator.addEventListener('click', function() {
+                        const index = parseInt(this.dataset.index);
+                        console.log(`Indicator clicked: ${index}`);
+                        goToSlide(index);
+                    });
+                }
+                
+                // Function to update carousel position
+                function goToSlide(index) {
+                    // Handle edge cases
+                    if (index < 0) {
+                        index = totalSlides - 1;
+                    } else if (index >= totalSlides) {
+                        index = 0;
+                    }
+                    
+                    console.log(`Going to slide: ${index}`);
+                    
+                    // Update current index
+                    currentIndex = index;
+                    
+                    // Move carousel
+                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    
+                    // Update indicators
+                    const indicators = document.querySelectorAll('.indicator');
+                    indicators.forEach((ind, i) => {
+                        if (i === currentIndex) {
+                            ind.classList.remove('bg-gray-300');
+                            ind.classList.add('bg-gray-700');
+                        } else {
+                            ind.classList.remove('bg-gray-700');
+                            ind.classList.add('bg-gray-300');
+                        }
+                    });
+                }
+                
+                // Add event listeners to buttons
+                prevButton.addEventListener('click', function() {
+                    console.log('Previous button clicked');
+                    goToSlide(currentIndex - 1);
+                });
+                
+                nextButton.addEventListener('click', function() {
+                    console.log('Next button clicked');
+                    goToSlide(currentIndex + 1);
+                });
+                
+                // Auto slideshow
+                let slideInterval = setInterval(() => {
+                    goToSlide(currentIndex + 1);
+                }, 5000);
+                
+                // Pause slideshow on hover
+                const carouselContainer = document.querySelector('.carousel-container');
+                carouselContainer.addEventListener('mouseenter', () => {
+                    clearInterval(slideInterval);
+                    console.log('Auto-slideshow paused');
+                });
+                
+                carouselContainer.addEventListener('mouseleave', () => {
+                    slideInterval = setInterval(() => {
+                        goToSlide(currentIndex + 1);
+                    }, 5000);
+                    console.log('Auto-slideshow resumed');
+                });
+                
+                // Ensure the carousel starts at the first slide
+                goToSlide(0);
+                
+                console.log('Carousel initialization complete');
+            }
+        </script>
 
         <!-- Legacy Page -->
         <section id="legacy" class="page min-h-screen bg-slate-50 py-20">
@@ -161,6 +362,65 @@
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
         }
+        document.addEventListener('DOMContentLoaded', function() {
+        // Values to be typed one by one
+        const values = [
+            "A Doyen regarded as Father of Indian Publishing",
+            "Founding Chairman of PHI Learning Private Limited",
+            "President-Emeritus of Federation of Indian Publishers",
+            "The First and Only Asian to become Vice-President of International Publishers Association"
+        ];
+        
+        const typingSpeed = 50; // milliseconds per character
+        const delayBetweenValues = 500; // milliseconds between values
+        
+        const listItems = document.querySelectorAll('#typing-values li');
+        const textElements = document.querySelectorAll('.typing-text');
+        
+        // Function to type text with animation
+        function typeText(element, text, index, callback) {
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                setTimeout(() => {
+                    typeText(element, text, index + 1, callback);
+                }, typingSpeed);
+            } else if (callback) {
+                setTimeout(callback, delayBetweenValues);
+            }
+        }
+        
+        // Start the typing animation sequence
+        function startTypingAnimation(itemIndex = 0) {
+            if (itemIndex >= listItems.length) return;
+            
+            // Show the current list item
+            listItems[itemIndex].classList.remove('opacity-0');
+            listItems[itemIndex].classList.add('opacity-100', 'transition-opacity', 'duration-500');
+            
+            // Start typing the text
+            typeText(textElements[itemIndex], values[itemIndex], 0, () => {
+                startTypingAnimation(itemIndex + 1);
+            });
+        }
+        
+        // Start the animation when the element is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        startTypingAnimation();
+                    }, 500); // Slight delay before starting
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        // Observe the typing values container
+        const typingContainer = document.getElementById('typing-values');
+        if (typingContainer) {
+            observer.observe(typingContainer);
+        }
+    });
 
         // Add this to your script section if you want to keep navbar links working with smooth scroll
         document.addEventListener('DOMContentLoaded', function() {
@@ -179,6 +439,20 @@
                 });
             });
         });
+
+      
+                async function loadGalleryCarousal() {
+                    try {
+                        const response = await fetch('gallery-carousal.html');
+                        const html = await response.text();
+                        document.getElementById('gallery-carousal-container').innerHTML = html;
+                    } catch (error) {
+                        console.error('Error loading gallery carousel:', error);
+                    }
+                }
+                
+                window.addEventListener('DOMContentLoaded', loadGalleryCarousal);
+           
     // Function to load the navbar
     async function loadNavbar() {
         try {
