@@ -116,21 +116,28 @@
     
 
     <script>
-        function toggleMenu() {
+         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
+            menu.classList.toggle('active');
         }
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth'
+        // Add this to your script section if you want to keep navbar links working with smooth scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for anchor links within the same page
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').split('#')[1];
+                    const target = document.getElementById(targetId);
+                    
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu if open
+                        document.getElementById('mobileMenu').classList.remove('active');
+                    }
                 });
-                // Close mobile menu if open
-                document.getElementById('mobileMenu').classList.add('hidden');
             });
         });
         async function loadNavbar() {
