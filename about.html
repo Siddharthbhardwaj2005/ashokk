@@ -8,6 +8,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="text-2xl font-playfair font-bold text-slate-800">PHI</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+                    <a href="/about.html" class="hover:text-blue-600 transition-colors">About</a>
+                    <a href="#legacy" class="hover:text-blue-600 transition-colors">Legacy</a>
+                    <a href="#impact" class="hover:text-blue-600 transition-colors">Impact</a>
+                    <a href="#tribute" class="hover:text-blue-600 transition-colors">Tribute</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#home" class="block hover:text-blue-600">Home</a>
+                <a href="/about.html" class="block hover:text-blue-600">About</a>
+                <a href="#legacy" class="block hover:text-blue-600">Legacy</a>
+                <a href="#impact" class="block hover:text-blue-600">Impact</a>
+                <a href="#tribute" class="block hover:text-blue-600">Tribute</a>
+            </div>
+        </div>
+    </nav>
+
     <section id="about" class="page min-h-screen bg-white py-20">
         <div class="container mx-auto px-6">
             <h2 class="font-playfair text-4xl font-bold text-center mb-16">About the Founder</h2>
