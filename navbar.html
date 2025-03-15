@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Navigation styles */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e293b;
+            text-decoration: none;
+        }
+
+        .navbar-menu {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-menu {
+                display: flex;
+                gap: 2rem;
+            }
+        }
+
+        .navbar-link {
+            color: #0f172a;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar-link:hover {
+            color: #2563eb;
+        }
+
+        .navbar-toggle {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-toggle {
+                display: none;
+            }
+        }
+
+        .navbar-mobile {
+            display: none;
+            background-color: white;
+            padding: 0.75rem 1rem;
+        }
+
+        .navbar-mobile.active {
+            display: block;
+        }
+
+        .navbar-mobile-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: #0f172a;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar-mobile-link:hover {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <a href="index.html#home" class="navbar-brand">PHI</a>
+                <div class="navbar-menu">
+                    <a href="index.html#home" class="navbar-link">Home</a>
+                    <a href="about.html" class="navbar-link">About</a>
+                    <a href="legacy.html" class="navbar-link">Legacy</a>
+                    <a href="awardandrecog.html" class="navbar-link">Awards and Recognitions</a>
+                    <a href="impact.html" class="navbar-link">Impact</a>
+                    <a href="index.html#tribute" class="navbar-link">Tribute</a>
+                </div>
+                <button class="navbar-toggle" onclick="toggleMenu()">
+                    <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="navbar-mobile">
+            <div class="navbar-mobile-links">
+                <a href="index.html#home" class="navbar-mobile-link">Home</a>
+                <a href="about.html" class="navbar-mobile-link">About</a>
+                <a href="legacy.html" class="navbar-mobile-link">Legacy</a>
+                <a href="awardandrecog.html" class="navbar-mobile-link">Awards and Recognitions</a>
+                <a href="impact.html" class="navbar-mobile-link">Impact</a>
+                <a href="index.html#tribute" class="navbar-mobile-link">Tribute</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Add this to your script section if you want to keep navbar links working with smooth scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for anchor links within the same page
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu if open
+                        document.getElementById('mobileMenu').classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
