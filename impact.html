@@ -6,70 +6,89 @@
     <title>Impact of Shri Asoke K. Ghosh</title>
     <link rel="stylesheet" href="navbar.css">
     <style>
+        /* Set up the page structure for a sticky footer */
+        html {
+            height: 100%;
+        }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
         }
+        
+        .content-wrapper {
+            flex: 1;
+        }
+        
         .container {
             width: 80%;
             margin: 20px auto;
-
             background: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        
         h1 {
             text-align: center;
             color: #004080;
         }
+        
         .section {
             margin-bottom: 20px;
             padding: 15px;
             border-left: 5px solid #004080;
             background: #f9f9f9;
         }
+        
         ul {
             list-style-type: square;
             padding-left: 20px;
         }
+        
         .footer {
-            text-align: center;
-            padding: 10px;
-            background: #004080;
+            background-color: #333;
             color: white;
-            margin-top: 20px;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
-    <div id="navbar-container"></div>
-    <br> <br> <br>
-    <div class="container">
-        <h1>Impact of Shri Asoke K. Ghosh</h1>
-        
-        <div class="section">
-            <ul>
-                <li>Empowered Indian students with affordable, world-class books, especially benefiting economically disadvantaged sections.</li>
-                <li>Revolutionized Indian publishing and elevated its global presence by bringing IPA Congress to New Delhi in 1992 and 2018.</li>
-                <li>Played a key role in Delhi being declared the UNESCO World Book Capital in 2003.</li>
-                <li>Significantly influenced higher education in India and abroad, with IITs and IIMs designing syllabi based on his publications.</li>
-                <li>His books are widely recommended in the 2018 AICTE syllabus and for competitive exams like Civil Services.</li>
-                <li>Encouraged eminent professors and scientists to author books, gaining them international recognition.</li>
-                <li>Publications across various disciplines have shaped student learning modules, with IBM collaborating to convert learning materials into textbooks.</li>
-                <li>Actively contributed to polio eradication efforts, aiding India's WHO-declared ‘Polio-free’ status.</li>
-            </ul>
+    <div class="content-wrapper">
+        <div id="navbar-container"></div>
+        <br> <br> <br>
+        <div class="container">
+            <h1>Impact of Shri Asoke K. Ghosh</h1>
+            
+            <div class="section">
+                <ul>
+                    <li>Empowered Indian students with affordable, world-class books, especially benefiting economically disadvantaged sections.</li>
+                    <li>Revolutionized Indian publishing and elevated its global presence by bringing IPA Congress to New Delhi in 1992 and 2018.</li>
+                    <li>Played a key role in Delhi being declared the UNESCO World Book Capital in 2003.</li>
+                    <li>Significantly influenced higher education in India and abroad, with IITs and IIMs designing syllabi based on his publications.</li>
+                    <li>His books are widely recommended in the 2018 AICTE syllabus and for competitive exams like Civil Services.</li>
+                    <li>Encouraged eminent professors and scientists to author books, gaining them international recognition.</li>
+                    <li>Publications across various disciplines have shaped student learning modules, with IBM collaborating to convert learning materials into textbooks.</li>
+                    <li>Actively contributed to polio eradication efforts, aiding India's WHO-declared 'Polio-free' status.</li>
+                </ul>
+            </div>
         </div>
     </div>
+    
     <div class="footer">
-        &copy; 2025 Shri Asoke K. Ghosh Legacy. All Rights Reserved.
+        &copy; <script>document.write(new Date().getFullYear())</script> Shri Asoke K. Ghosh. All Rights Reserved.
     </div>
-
+    
     <script>
-
-function toggleMenu() {
+        function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
         }
@@ -93,18 +112,19 @@ function toggleMenu() {
                 });
             });
         });
-          async function loadNavbar() {
-         try {
-             const response = await fetch('navbar.html');
-             const html = await response.text();
-             document.getElementById('navbar-container').innerHTML = html;
-         } catch (error) {
-             console.error('Error loading navbar:', error);
-         }
-     }
-     
-     // Load the navbar when the page loads
-     window.addEventListener('DOMContentLoaded', loadNavbar);
+        
+        async function loadNavbar() {
+            try {
+                const response = await fetch('navbar.html');
+                const html = await response.text();
+                document.getElementById('navbar-container').innerHTML = html;
+            } catch (error) {
+                console.error('Error loading navbar:', error);
+            }
+        }
+        
+        // Load the navbar when the page loads
+        window.addEventListener('DOMContentLoaded', loadNavbar);
     </script>
 </body>
 </html>

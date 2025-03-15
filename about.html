@@ -34,11 +34,12 @@
             background: #f9f9f9;
         }
         .footer {
-            text-align: center;
-            padding: 10px;
-            background: #004080;
+            background-color: #333;
             color: white;
-            margin-top: 20px;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -89,9 +90,8 @@
     </div>
 
     <div class="footer">
-        &copy; 2025 PHI Publications. All Rights Reserved.
+        &copy; <script>document.write(new Date().getFullYear())</script> Shri Asoke K. Ghosh. All Rights Reserved.
     </div>
-
     <script>
   function toggleMenu() {
             const menu = document.getElementById('mobileMenu');

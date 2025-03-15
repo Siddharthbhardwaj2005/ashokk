@@ -29,6 +29,13 @@
         display: inline-block;
         min-height: 1.2em;
     }
+    .footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+    }
     </style>
 </head>
 <body class="bg-slate-50">
@@ -340,7 +347,7 @@
         </section>
 
         <!-- Tribute Page -->
-        <section id="tribute" class="page min-h-screen bg-slate-800 text-white py-20">
+        <section id="tribute" class="page bg-slate-800 text-white py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="font-playfair text-4xl font-bold mb-8">Our Tribute</h2>
                 <p class="font-merriweather text-xl max-w-3xl mx-auto mb-12">
@@ -355,6 +362,9 @@
                 </div>
             </div>
         </section>
+        <div class="footer">
+            &copy; <script>document.write(new Date().getFullYear())</script> Shri Asoke K. Ghosh. All Rights Reserved.
+        </div>
     </div>
 
     <script>
@@ -463,9 +473,18 @@
             console.error('Error loading navbar:', error);
         }
     }
+    async function loadFooter(){
+        try{
+            const response = await fetch('footer.html');
+            const html = await response.text();
+            document.getElementById('footer-container').innerHTML = html;
+        } catch(e){
+            console.error('Error loading Footer: ', e)
+        }
+    }
     
     // Load the navbar when the page loads
-    window.addEventListener('DOMContentLoaded', loadNavbar);
+    window.addEventListener('DOMContentLoaded', loadNavbar, loadFooter);
 
     </script>
 </body>
