@@ -173,120 +173,7 @@
         </section>
 
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                initializeCarousel();
-            });
-
-            function initializeCarousel() {
-                console.log('Initializing carousel');
-                
-                // Get carousel elements
-                const carousel = document.querySelector('.carousel');
-                const slides = document.querySelectorAll('.carousel-slide');
-                const prevButton = document.getElementById('prevBtn');
-                const nextButton = document.getElementById('nextBtn');
-                const indicatorsContainer = document.getElementById('indicators');
-                
-                // Exit if elements don't exist
-                if (!carousel || !slides.length || !prevButton || !nextButton || !indicatorsContainer) {
-                    console.error('Carousel elements not found');
-                    return;
-                }
-                
-                let currentIndex = 0;
-                const totalSlides = slides.length;
-                
-                console.log(`Found ${totalSlides} slides`);
-                
-                // Clear any existing indicators
-                indicatorsContainer.innerHTML = '';
-                
-                // Create indicators
-                for (let i = 0; i < totalSlides; i++) {
-                    const indicator = document.createElement('div');
-                    indicator.classList.add('indicator', 'w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'mx-1', 'cursor-pointer', 'transition');
-                    if (i === 0) {
-                        indicator.classList.add('bg-gray-700');
-                    }
-                    indicator.dataset.index = i;
-                    indicatorsContainer.appendChild(indicator);
-                    
-                    // Add click event to indicators
-                    indicator.addEventListener('click', function() {
-                        const index = parseInt(this.dataset.index);
-                        console.log(`Indicator clicked: ${index}`);
-                        goToSlide(index);
-                    });
-                }
-                
-                // Function to update carousel position
-                function goToSlide(index) {
-                    // Handle edge cases
-                    if (index < 0) {
-                        index = totalSlides - 1;
-                    } else if (index >= totalSlides) {
-                        index = 0;
-                    }
-                    
-                    console.log(`Going to slide: ${index}`);
-                    
-                    // Update current index
-                    currentIndex = index;
-                    
-                    // Move carousel
-                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    
-                    // Update indicators
-                    const indicators = document.querySelectorAll('.indicator');
-                    indicators.forEach((ind, i) => {
-                        if (i === currentIndex) {
-                            ind.classList.remove('bg-gray-300');
-                            ind.classList.add('bg-gray-700');
-                        } else {
-                            ind.classList.remove('bg-gray-700');
-                            ind.classList.add('bg-gray-300');
-                        }
-                    });
-                }
-                
-                // Add event listeners to buttons
-                prevButton.addEventListener('click', function() {
-                    console.log('Previous button clicked');
-                    goToSlide(currentIndex - 1);
-                });
-                
-                nextButton.addEventListener('click', function() {
-                    console.log('Next button clicked');
-                    goToSlide(currentIndex + 1);
-                });
-                
-                // Auto slideshow
-                let slideInterval = setInterval(() => {
-                    goToSlide(currentIndex + 1);
-                }, 5000);
-                
-                // Pause slideshow on hover
-                const carouselContainer = document.querySelector('.carousel-container');
-                carouselContainer.addEventListener('mouseenter', () => {
-                    clearInterval(slideInterval);
-                    console.log('Auto-slideshow paused');
-                });
-                
-                carouselContainer.addEventListener('mouseleave', () => {
-                    slideInterval = setInterval(() => {
-                        goToSlide(currentIndex + 1);
-                    }, 5000);
-                    console.log('Auto-slideshow resumed');
-                });
-                
-                // Ensure the carousel starts at the first slide
-                goToSlide(0);
-                
-                console.log('Carousel initialization complete');
-            }
-        </script>
-
+    
         <!-- Legacy Page -->
         <section id="legacy" class="page min-h-screen bg-slate-50 py-20">
             <div class="container mx-auto px-6">
@@ -398,6 +285,118 @@
                 setTimeout(callback, delayBetweenValues);
             }
         }
+        document.addEventListener('DOMContentLoaded', function() {
+                initializeCarousel();
+            });
+
+            function initializeCarousel() {
+                console.log('Initializing carousel');
+                
+                // Get carousel elements
+                const carousel = document.querySelector('.carousel');
+                const slides = document.querySelectorAll('.carousel-slide');
+                const prevButton = document.getElementById('prevBtn');
+                const nextButton = document.getElementById('nextBtn');
+                const indicatorsContainer = document.getElementById('indicators');
+                
+                // Exit if elements don't exist
+                if (!carousel || !slides.length || !prevButton || !nextButton || !indicatorsContainer) {
+                    console.error('Carousel elements not found');
+                    return;
+                }
+                
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+                
+                console.log(`Found ${totalSlides} slides`);
+                
+                // Clear any existing indicators
+                indicatorsContainer.innerHTML = '';
+                
+                // Create indicators
+                for (let i = 0; i < totalSlides; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.classList.add('indicator', 'w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'mx-1', 'cursor-pointer', 'transition');
+                    if (i === 0) {
+                        indicator.classList.add('bg-gray-700');
+                    }
+                    indicator.dataset.index = i;
+                    indicatorsContainer.appendChild(indicator);
+                    
+                    // Add click event to indicators
+                    indicator.addEventListener('click', function() {
+                        const index = parseInt(this.dataset.index);
+                        console.log(`Indicator clicked: ${index}`);
+                        goToSlide(index);
+                    });
+                }
+                
+                // Function to update carousel position
+                function goToSlide(index) {
+                    // Handle edge cases
+                    if (index < 0) {
+                        index = totalSlides - 1;
+                    } else if (index >= totalSlides) {
+                        index = 0;
+                    }
+                    
+                    console.log(`Going to slide: ${index}`);
+                    
+                    // Update current index
+                    currentIndex = index;
+                    
+                    // Move carousel
+                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    
+                    // Update indicators
+                    const indicators = document.querySelectorAll('.indicator');
+                    indicators.forEach((ind, i) => {
+                        if (i === currentIndex) {
+                            ind.classList.remove('bg-gray-300');
+                            ind.classList.add('bg-gray-700');
+                        } else {
+                            ind.classList.remove('bg-gray-700');
+                            ind.classList.add('bg-gray-300');
+                        }
+                    });
+                }
+                
+                // Add event listeners to buttons
+                prevButton.addEventListener('click', function() {
+                    console.log('Previous button clicked');
+                    goToSlide(currentIndex - 1);
+                });
+                
+                nextButton.addEventListener('click', function() {
+                    console.log('Next button clicked');
+                    goToSlide(currentIndex + 1);
+                });
+                
+                // Auto slideshow
+                let slideInterval = setInterval(() => {
+                    goToSlide(currentIndex + 1);
+                }, 5000);
+                
+                // Pause slideshow on hover
+                const carouselContainer = document.querySelector('.carousel-container');
+                carouselContainer.addEventListener('mouseenter', () => {
+                    clearInterval(slideInterval);
+                    console.log('Auto-slideshow paused');
+                });
+                
+                carouselContainer.addEventListener('mouseleave', () => {
+                    slideInterval = setInterval(() => {
+                        goToSlide(currentIndex + 1);
+                    }, 5000);
+                    console.log('Auto-slideshow resumed');
+                });
+                
+                // Ensure the carousel starts at the first slide
+                goToSlide(0);
+                
+                console.log('Carousel initialization complete');
+            }
+      
         
         // Start the typing animation sequence
         function startTypingAnimation(itemIndex = 0) {
